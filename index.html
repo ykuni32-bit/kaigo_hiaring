@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【介護業界特化】動画制作ヒアリングシート</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --sheet-bg: #ffffff;
+            --primary-blue: #2c3e50;
+            --accent-green: #27ae60;
+            --accent-gold: #d4af37;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--sheet-bg);
+            padding: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        /* Header Area */
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .header-top {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent-green);
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: var(--primary-blue);
+            letter-spacing: 0.05em;
+        }
+
+        .concept-badge {
+            display: inline-block;
+            background: var(--accent-green);
+            color: white;
+            padding: 4px 15px;
+            font-size: 13px;
+            border-radius: 20px;
+            margin-top: 15px;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            background: var(--primary-blue);
+            padding: 10px 20px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+
+        .section-title span.number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--accent-gold);
+        }
+
+        /* Question Groups */
+        .question-item {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        label small {
+            font-weight: 400;
+            color: var(--text-sub);
+            margin-left: 10px;
+        }
+
+        .input-area {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 15px;
+            font-family: inherit;
+            background: #fafafa;
+            transition: all 0.3s;
+        }
+
+        .input-area:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+        }
+
+        textarea.input-area {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Checkbox groups */
+        .check-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .check-item input {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Belief Box */
+        .belief-box {
+            background: #fdf9f0;
+            border: 2px dashed var(--accent-gold);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .belief-box input {
+            border: none;
+            border-bottom: 2px solid var(--primary-blue);
+            background: transparent;
+            width: 70%;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 5px;
+            margin: 10px 0;
+        }
+
+        /* Buttons */
+        .actions {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .btn:active { transform: scale(0.95); }
+        .btn-print { background: var(--accent-gold); color: white; }
+
+        @media print {
+            .actions, .concept-badge { display: none; }
+            body { padding: 0; background: white; }
+            .container { box-shadow: none; max-width: 100%; padding: 0; }
+            .input-area { background: white; border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="actions">
+        <button class="btn btn-print" onclick="window.print()">
+            <i class="fa-solid fa-print"></i> PDFとして保存 / 印刷
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <p class="header-top">STRATEGIC VIDEO MARKETING FOR NURSING CARE</p>
+            <h1>【介護特化】動画制作ヒアリングシート</h1>
+            <div class="concept-badge">「集客 × 求人」同時解決・経営資産化モデル</div>
+        </header>
+
+        <!-- Basic Info -->
+        <section>
+            <div class="section-title"><span class="number">00</span> 基本情報</div>
+            <div class="question-item">
+                <label>施設名 / 法人名</label>
+                <input type="text" class="input-area" placeholder="例：住宅型有料老人ホーム 〇〇の杜">
+            </div>
+            <div class="question-item">
+                <label>解決したい優先課題</label>
+                <div class="check-grid">
+                    <label class="check-item"><input type="checkbox"> 空室の解消（集客）</label>
+                    <label class="check-item"><input type="checkbox"> 採用応募数の増加（求人）</label>
+                    <label class="check-item"><input type="checkbox"> 離職率の低下（内部浸透）</label>
+                    <label class="check-item"><input type="checkbox"> 地域での認知度向上</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 1: Problem Definition -->
+        <section>
+            <div class="section-title"><span class="number">01</span> 問題提起（Open Loop）</div>
+            <div class="question-item">
+                <label>Q1. 介護を検討するご家族や求職者が抱いている「最大の不安」は何だと思いますか？</label>
+                <textarea class="input-area" placeholder="例：実際のケアの様子が見えない、職員が疲弊していそう等"></textarea>
+            </div>
+            <div class="question-item">
+                <label>Q2. 世の中の「一般的な施設」と貴施設で、何が一番違うと感じますか？<small>（数字や事実）</small></label>
+                <textarea class="input-area" placeholder="例：離職率〇％、夜間の職員配置数、看取りの実績等"></textarea>
+            </div>
+            <div class="question-item">
+                <label>Q3. 動画を観た瞬間に「あ、ここは他と違う」と思わせる「リアルな日常」の一コマは？</label>
+                <textarea class="input-area" placeholder="例：スタッフと利用者様が冗談を言い合って笑っている様子等"></textarea>
+            </div>
+        </section>
+
+        <!-- Phase 2: Belief & Philosophy -->
+        <section>
+            <div class="section-title"><span class="number">02</span> 信念（Belief）</div>
+            <div class="question-item">
+                <label>Q4. なぜ貴施設は、今のケアのスタイルを選んでいるのですか？<small>（Why）</small></label>
+                <textarea class="input-area" placeholder="創業の想いや、現在の運営方針の根拠"></textarea>
+            </div>
+            <div class="question-item">
+                <label>Q5. 施設長（責任者）として、これだけは絶対に譲れないことは何ですか？</label>
+                <textarea class="input-area"></textarea>
+            </div>
+            <div class="question-item">
+                <div class="belief-box">
+                    <p style="font-weight:700;">私たちの施設の核となるメッセージ</p>
+                    だから私たちは、<br>
+                    <input type="text" placeholder="ここに最も伝えたい信念を記入"><br>
+                    という価値を、ご家族とスタッフに提供し続けます。
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 3: Story & Real -->
+        <section>
+            <div class="section-title"><span class="number">03</span> リアルな物語（Story）</div>
+            <div class="question-item">
+                <label>Q6. 「大変なこともあるけれど、やっぱりここで良かった」と思えた具体的なエピソードは？</label>
+                <textarea class="input-area" placeholder="綺麗事だけでなく、苦労を乗り越えた実話を記入（ミスマッチ防止）"></textarea>
+            </div>
+            <div class="question-item">
+                <label>Q7. 利用者様のご家族から頂いた、最も心に残っている言葉は何ですか？</label>
+                <textarea class="input-area"></textarea>
+            </div>
+        </section>
+
+        <!-- Phase 4: Numbers & Trust -->
+        <section>
+            <div class="section-title"><span class="number">04</span> 信頼の裏付け（Numbers）</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="question-item">
+                    <label>平均勤続年数</label>
+                    <input type="text" class="input-area" placeholder="〇年">
+                </div>
+                <div class="question-item">
+                    <label>入居率 / 待機者数</label>
+                    <input type="text" class="input-area" placeholder="〇％ / 〇名">
+                </div>
+            </div>
+            <div class="question-item">
+                <label>Q8. スタッフにアンケートを取った際、最も多かった「入職の決め手」は何ですか？</label>
+                <textarea class="input-area"></textarea>
+            </div>
+        </section>
+
+        <!-- Phase 5: Action -->
+        <section>
+            <div class="section-title"><span class="number">05</span> 行動喚起（Close）</div>
+            <div class="question-item">
+                <label>Q9. 動画を観終わった家族・求職者に、まず何をしてほしいですか？</label>
+                <div class="check-grid">
+                    <label class="check-item"><input type="checkbox"> 見学の申し込み</label>
+                    <label class="check-item"><input type="checkbox"> 資料請求</label>
+                    <label class="check-item"><input type="checkbox"> 求人へのエントリー</label>
+                    <label class="check-item"><input type="checkbox"> LINE登録 / 相談</label>
+                </div>
+            </div>
+            <div class="question-item">
+                <label>Q10. 最後に、貴施設が地域において「どのような存在」でありたいかを教えてください。</label>
+                <textarea class="input-area"></textarea>
+            </div>
+        </section>
+
+        <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); text-align: center; font-size: 12px; color: var(--text-sub);">
+            <p>※このヒアリングシートは、動画を「経営資産」として活用するための戦略設計図です。</p>
+        </footer>
+    </div>
+</body>
+</html>
